@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Película</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()" color="danger" size="small">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngFor="let item of movies" >
+    <img [src]="item.cover" alt="Portada del libro" />
+    <ion-card-header>
+      <ion-card-title>{{ item.title }}</ion-card-title>
+      <ion-card-subtitle>{{ item.release_date }}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+</ion-content>
